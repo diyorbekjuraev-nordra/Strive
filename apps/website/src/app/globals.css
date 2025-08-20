@@ -69,11 +69,10 @@
   --animation-ultra-fast: 100ms;
   --radius: 0.625rem;
 
-  --primary: var(--text-primary);
+  --primary: oklch(0.205 0 0);
 
   /* IBM Carbon White Theme - Light Mode */
-  /* Background Colors */
-  --background: #ffffff; /* white */
+  /* Background Colors */ /* white */
   --background-hover: rgba(141, 141, 141, 0.12); /* hover overlay */
   --background-active: rgba(141, 141, 141, 0.4); /* active overlay */
   --background-selected: rgba(141, 141, 141, 0.16); /* selected overlay */
@@ -176,34 +175,33 @@
   --skeleton-element: #c6c6c6; /* gray30 */
 
   /* Compatibility with existing shadcn tokens */
-  --foreground: var(--text-primary);
-  --card: var(--layer-01);
-  --card-foreground: var(--text-primary);
-  --popover: var(--layer-02);
-  --popover-foreground: var(--text-primary);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
   --primary: var(--text-primary);
-  --primary-foreground: var(--text-on-color);
-  --secondary: var(--layer-01);
-  --secondary-foreground: var(--text-secondary);
-  --muted: var(--layer-01);
-  --muted-foreground: var(--text-helper);
-  --accent: var(--layer-selected-01);
-  --accent-foreground: var(--text-primary);
-  --destructive: var(--bg-destructive);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: var(--text-on-color);
-  --border: var(--border-subtle-00);
-  --input: var(--field-01);
-  --ring: var(--focus);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
 
   /* Sidebar tokens */
-  --sidebar: var(--layer-01);
-  --sidebar-foreground: var(--text-secondary);
-  --sidebar-primary: var(--text-primary);
-  --sidebar-primary-foreground: var(--background);
-  --sidebar-accent: var(--layer-selected-01);
-  --sidebar-accent-foreground: var(--text-primary);
-  --sidebar-border: var(--border-00);
-  --sidebar-ring: var(--ring);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 
   /* destructive */
   --bg-destructive: #da1e28;
@@ -214,11 +212,11 @@
   --bg-tooltip: #1b1d21;
 
   /* Chart colors */
-  --chart-1: var(--interactive);
-  --chart-2: #24a148; /* green50 */
-  --chart-3: #f1c21b; /* yellow30 */
-  --chart-4: #ff832b; /* orange40 */
-  --chart-5: #8a3ffc; /* purple60 */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704); /* green50 */
+  --chart-3: oklch(0.398 0.07 227.392); /* yellow30 */
+  --chart-4: oklch(0.828 0.189 84.429); /* orange40 */
+  --chart-5: oklch(0.769 0.188 70.08); /* purple60 */
 
   /* Button colors - Legacy support */
   --button-background-base: #0f62fe;
@@ -350,14 +348,16 @@
   /* Scrollbar - color */
   --scrollbar-thumb: #d4d4d4;
   --scrollbar-thumb-hover: #bbbbbb;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 .dark {
   /* IBM Carbon G100 Theme - Dark Mode */
 
-  --primary: var(--text-primary);
+  --primary: oklch(0.922 0 0);
   /* Background Colors */
-  --background: #161616; /* gray100 */
+  --background: oklch(0.145 0 0); /* gray100 */
   --background-hover: rgba(141, 141, 141, 0.16); /* hover overlay */
   --background-active: rgba(141, 141, 141, 0.4); /* active overlay */
   --background-selected: rgba(141, 141, 141, 0.24); /* selected overlay */
@@ -459,24 +459,24 @@
   --skeleton-element: #393939; /* gray80 */
 
   /* Compatibility with existing shadcn tokens */
-  --foreground: var(--text-primary);
-  --card: var(--layer-01);
-  --card-foreground: var(--text-primary);
-  --popover: var(--layer-02);
-  --popover-foreground: var(--text-primary);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
   --primary: var(--interactive);
-  --primary-foreground: var(--text-on-color);
-  --secondary: var(--layer-01);
-  --secondary-foreground: var(--text-secondary);
-  --muted: var(--layer-01);
-  --muted-foreground: var(--text-helper);
-  --accent: var(--layer-selected-01);
-  --accent-foreground: var(--text-primary);
-  --destructive: var(--bg-destructive);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: var(--text-on-color);
-  --border: var(--border-subtle-00);
-  --input: var(--field-01);
-  --ring: var(--focus);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
 
   /* destructive */
   --bg-destructive: #da1e28;
@@ -484,24 +484,24 @@
   --bg-destructive-active: #750e13;
 
   /* Sidebar tokens */
-  --sidebar: var(--layer-01);
-  --sidebar-foreground: var(--text-secondary);
-  --sidebar-primary: var(--text-primary);
-  --sidebar-primary-foreground: var(--background);
-  --sidebar-accent: var(--layer-selected-01);
-  --sidebar-accent-foreground: var(--text-primary);
-  --sidebar-border: var(--border-subtle-01);
-  --sidebar-ring: var(--ring);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 
   /* Tooltip */
   --bg-tooltip: #1b1d21;
 
   /* Chart colors */
-  --chart-1: var(--interactive);
-  --chart-2: #42be65; /* green40 */
-  --chart-3: #f1c21b; /* yellow30 */
-  --chart-4: #ff832b; /* orange40 */
-  --chart-5: #be95ff; /* purple40 */
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48); /* green40 */
+  --chart-3: oklch(0.769 0.188 70.08); /* yellow30 */
+  --chart-4: oklch(0.627 0.265 303.9); /* orange40 */
+  --chart-5: oklch(0.645 0.246 16.439); /* purple40 */
 
   /* Button colors - Legacy support */
   --button-background-base: #0f62fe;
