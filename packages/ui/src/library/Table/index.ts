@@ -1,0 +1,33 @@
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBodyProps,
+  TableFooterProps,
+  TableRowProps,
+  TableHeadProps,
+  TableCellProps,
+  TableCaptionProps,
+} from "./src/table";
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+  type TableBodyProps,
+  type TableFooterProps,
+  type TableRowProps,
+  type TableHeadProps,
+  type TableCellProps,
+  type TableCaptionProps,
+};

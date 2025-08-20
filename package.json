@@ -1,0 +1,23 @@
+{
+  "name": "Strive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for Strive UI library and website",
+  "license": "MIT",
+  "packageManager": "pnpm@10.6.5",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "lint": "biome check .",
+    "format": "biome format .",
+    "clean": "pnpm -r run clean"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "typescript": "^5.9.2"
+  }
+}

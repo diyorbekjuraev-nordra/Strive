@@ -1,0 +1,95 @@
+import {
+  BORDER_COLOR_VARIANT_ENUM,
+  BORDER_COLOR_VARIANTS,
+  ICON_COLOR_VARIANT_ENUM,
+  ICON_COLOR_VARIANTS,
+  LINK_COLOR_VARIANT_ENUM,
+  LINK_COLOR_VARIANTS,
+  STATUS_VARIANT_ENUM,
+  STATUS_VARIANTS,
+  TEXT_COLOR_VARIANT_ENUM,
+  TEXT_COLOR_VARIANTS,
+} from "@/lib/types/colors";
+
+type TUseColors = {
+  text_colors: Record<TEXT_COLOR_VARIANTS, string>;
+  link_colors: Record<LINK_COLOR_VARIANTS, string>;
+  icon_colors: Record<ICON_COLOR_VARIANTS, string>;
+  status_colors: Record<STATUS_VARIANTS, string>;
+  border_colors: Record<BORDER_COLOR_VARIANTS, string>;
+};
+
+/**
+ * Centralized color mappings for text, link, icon, and status variants.
+ * These are plain constants — no runtime hooks, no re-computation.
+ * Can be used anywhere (React or non-React code).
+ */
+
+export const TEXT_COLORS: Record<TEXT_COLOR_VARIANTS, string> = {
+  primary: TEXT_COLOR_VARIANT_ENUM.PRIMARY,
+  secondary: TEXT_COLOR_VARIANT_ENUM.SECONDARY,
+  placeholder: TEXT_COLOR_VARIANT_ENUM.PLACEHOLDER,
+  "on-color": TEXT_COLOR_VARIANT_ENUM.ON_COLOR,
+  "on-color-disabled": TEXT_COLOR_VARIANT_ENUM.ON_COLOR_DISABLED,
+  helper: TEXT_COLOR_VARIANT_ENUM.HELPER,
+  error: TEXT_COLOR_VARIANT_ENUM.ERROR,
+  inverse: TEXT_COLOR_VARIANT_ENUM.INVERSE,
+  disabled: TEXT_COLOR_VARIANT_ENUM.DISABLED,
+};
+
+export const LINK_COLORS: Record<LINK_COLOR_VARIANTS, string> = {
+  primary: LINK_COLOR_VARIANT_ENUM.PRIMARY,
+  "primary-hover": LINK_COLOR_VARIANT_ENUM.PRIMARY_HOVER,
+  secondary: LINK_COLOR_VARIANT_ENUM.SECONDARY,
+  inverse: LINK_COLOR_VARIANT_ENUM.INVERSE,
+  "inverse-hover": LINK_COLOR_VARIANT_ENUM.INVERSE_HOVER,
+  helper: LINK_COLOR_VARIANT_ENUM.HELPER,
+  error: LINK_COLOR_VARIANT_ENUM.ERROR,
+  "inverse-active": LINK_COLOR_VARIANT_ENUM.INVERSE_ACTIVE,
+  "inverse-visited": LINK_COLOR_VARIANT_ENUM.INVERSE_VISITED,
+  visited: LINK_COLOR_VARIANT_ENUM.VISITED,
+};
+
+export const ICON_COLORS: Record<ICON_COLOR_VARIANTS, string> = {
+  primary: ICON_COLOR_VARIANT_ENUM.PRIMARY,
+  secondary: ICON_COLOR_VARIANT_ENUM.SECONDARY,
+  "on-color": ICON_COLOR_VARIANT_ENUM.ON_COLOR,
+  "on-color-disabled": ICON_COLOR_VARIANT_ENUM.ON_COLOR_DISABLED,
+  interactive: ICON_COLOR_VARIANT_ENUM.INTERACTIVE,
+  inverse: ICON_COLOR_VARIANT_ENUM.INVERSE,
+  disabled: ICON_COLOR_VARIANT_ENUM.DISABLED,
+};
+
+export const STATUS_COLORS: Record<STATUS_VARIANTS, string> = {
+  success: STATUS_VARIANT_ENUM.SUCCESS,
+  warning: STATUS_VARIANT_ENUM.WARNING,
+  error: STATUS_VARIANT_ENUM.ERROR,
+  info: STATUS_VARIANT_ENUM.INFO,
+};
+
+export const BORDER_COLORS: Record<BORDER_COLOR_VARIANTS, string> = {
+  default: BORDER_COLOR_VARIANT_ENUM.DEFAULT,
+  "subtle-00": BORDER_COLOR_VARIANT_ENUM.SUBTLE_00,
+  "subtle-01": BORDER_COLOR_VARIANT_ENUM.SUBTLE_01,
+  "subtle-02": BORDER_COLOR_VARIANT_ENUM.SUBTLE_02,
+  "subtle-03": BORDER_COLOR_VARIANT_ENUM.SUBTLE_03,
+  "strong-01": BORDER_COLOR_VARIANT_ENUM.STRONG_01,
+  "strong-02": BORDER_COLOR_VARIANT_ENUM.STRONG_02,
+  "strong-03": BORDER_COLOR_VARIANT_ENUM.STRONG_03,
+  "tile-01": BORDER_COLOR_VARIANT_ENUM.TILE_01,
+  "tile-02": BORDER_COLOR_VARIANT_ENUM.TILE_02,
+  "tile-03": BORDER_COLOR_VARIANT_ENUM.TILE_03,
+  inverse: BORDER_COLOR_VARIANT_ENUM.INVERSE,
+  interactive: BORDER_COLOR_VARIANT_ENUM.INTERACTIVE,
+  disabled: BORDER_COLOR_VARIANT_ENUM.DISABLED,
+};
+
+export const useColors = (): TUseColors => {
+  return {
+    text_colors: TEXT_COLORS,
+    link_colors: LINK_COLORS,
+    icon_colors: ICON_COLORS,
+    status_colors: STATUS_COLORS,
+    border_colors: BORDER_COLORS,
+  };
+};

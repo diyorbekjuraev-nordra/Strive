@@ -1,0 +1,38 @@
+# Root schema reference
+"$schema" = "https://biomejs.dev/schemas/2.2.0/schema.json"
+
+# Version control integration (optional)
+[tools.vcs]
+enabled = true
+clientKind = "git"
+useIgnoreFile = true
+
+# Files to include/exclude
+[tools.files]
+ignoreUnknown = true
+includes = [
+  "src/**/*.{ts,tsx,js,jsx}",  # include all source files
+  "!node_modules",
+  "!.next",
+  "!dist",
+  "!build"
+]
+
+# Formatter settings
+[tools.formatter]
+enabled = true
+indentStyle = "space"
+indentWidth = 2
+lineWidth = 100
+quoteStyle = "single"
+trailingComma = "es5"
+
+# Linter settings
+[tools.linter]
+enabled = true
+rules = { recommended = true }
+domains = { react = "recommended", typescript = "recommended" }
+
+# Assist features
+[tools.assist.actions.source]
+organizeImports = "on"
