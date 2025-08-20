@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "node ../../scripts/use-npm-version.js",
+    "prebuild": "node ../../../../scripts/use-npm-version.js",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
