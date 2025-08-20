@@ -13,7 +13,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@ebrai/strive": "0.1.70",
+    "@ebrai/strive": "^0.1.68",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.539.0",
