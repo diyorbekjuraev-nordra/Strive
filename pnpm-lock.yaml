@@ -18,8 +18,8 @@ importers:
   apps/website:
     dependencies:
       '@ebrai/strive':
-        specifier: ^0.1.78
-        version: 0.1.78(@babel/core@7.28.3)(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(class-variance-authority@0.7.1)(clsx@2.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@3.3.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.0))
+        specifier: ^0.1.79
+        version: 0.1.79(@babel/core@7.28.3)(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(class-variance-authority@0.7.1)(clsx@2.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@3.3.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.0))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -467,8 +467,8 @@ packages:
   '@date-fns/tz@1.4.1':
     resolution: {integrity: sha512-P5LUNhtbj6YfI3iJjw5EL9eUAG6OitD0W3fWQcpQjDRc/QIsL0tRNuO1PcDvPccWL1fSTXXdE1ds+l95DV/OFA==}
 
-  '@ebrai/strive@0.1.78':
-    resolution: {integrity: sha512-fy3kFB+kByrIsUR2ttZLBXOJfEvOMTLjsw/S/XcgMzrxbA+MA/iisYEDpP3uW70ie3FfH1suN/LMdhZtbyokJQ==}
+  '@ebrai/strive@0.1.79':
+    resolution: {integrity: sha512-CMf1houSoP5gdJBY4n8uV1XAhhkxVbVHPhV95OOj9C2pDJBVflRsisSKMW3uj4bm0sjy37lulZTzuRP3K0WDKQ==}
     peerDependencies:
       class-variance-authority: ^0.7.0
       clsx: ^2.0.0
@@ -4093,7 +4093,7 @@ snapshots:
 
   '@date-fns/tz@1.4.1': {}
 
-  '@ebrai/strive@0.1.78(@babel/core@7.28.3)(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(class-variance-authority@0.7.1)(clsx@2.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@3.3.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.0))':
+  '@ebrai/strive@0.1.79(@babel/core@7.28.3)(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(class-variance-authority@0.7.1)(clsx@2.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@3.3.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.0))':
     dependencies:
       '@base-ui-components/react': 1.0.0-beta.2(@types/react@19.1.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@omit/react-confirm-dialog': 1.2.0(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
