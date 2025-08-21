@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const kbdVariants = cva(
-  "inline-flex items-center justify-center font-mono rounded-md",
+  "inline-flex items-center justify-center font-mono rounded",
   {
     variants: {
       variant: {
-        default: "bg-accent border border-border text-accent-foreground",
-        outline: "text-accent-foreground border border-input",
+        default: "bg-muted border border-border text-muted-foreground",
+        outline: "text-muted-foreground border border-border",
       },
       size: {
         md: "h-7 min-w-7 px-1.5 text-xs [&_svg]:size-3.5",

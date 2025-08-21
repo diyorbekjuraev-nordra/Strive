@@ -100,17 +100,25 @@ const tabsTriggerVariants = cva(
       { variant: "default", size: "lg", className: "py-2.5 px-4 rounded-md" },
       { variant: "default", size: "md", className: "py-1.5 px-3 rounded-md" },
       { variant: "default", size: "sm", className: "py-1.5 px-2.5 rounded-sm" },
-      { variant: "default", size: "xs", className: "py-1 px-2 rounded-sm" },
+      {
+        variant: "default",
+        size: "xs",
+        className: "py-[1.8px] px-2 rounded-md text-[10px]",
+      },
 
       { variant: "button", size: "lg", className: "py-3 px-4 rounded-lg" },
       { variant: "button", size: "md", className: "py-2.5 px-3 rounded-lg" },
       { variant: "button", size: "sm", className: "py-2 px-2.5 rounded-md" },
-      { variant: "button", size: "xs", className: "py-1.5 px-2 rounded-md" },
+      {
+        variant: "button",
+        size: "xs",
+        className: "py-[5.5px] px-2 rounded-md text-[10px]",
+      },
 
       { variant: "line", size: "lg", className: "py-3" },
       { variant: "line", size: "md", className: "py-2.5" },
       { variant: "line", size: "sm", className: "py-2" },
-      { variant: "line", size: "xs", className: "py-1.5" },
+      { variant: "line", size: "xs", className: "py-[1.8px] text-[10px]" },
     ],
     defaultVariants: {
       variant: "default",

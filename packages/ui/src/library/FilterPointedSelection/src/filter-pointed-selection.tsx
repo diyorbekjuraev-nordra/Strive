@@ -1,3 +1,4 @@
+"use client"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,7 +8,7 @@ import {
 } from "@/library/Dropdown";
 import { Button } from "@/library/Button/src/button";
 import { Sliders, CircleCheck } from "lucide-react";
-import { FilterOption } from "./use-filter-pointed-selection";
+import type { FilterOption } from "./use-filter-pointed-selection";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Separator } from "@/library/Separator";
@@ -49,7 +50,7 @@ export const FilterPointedSelection = ({
         <Button prepend={triggerIcon} variant="outline" className="relative">
           {buttonText}
           {selectedValue && (
-            <span className="absolute right-[-2px] top-[2px] -translate-y-1/2 size-2 rounded-full bg-[var(--interactive)] animate-pulse"></span>
+            <span className="absolute right-[-2px] top-[2px] -translate-y-1/2 size-2 rounded-full bg-[var(--interactive)]"></span>
           )}
         </Button>
       </DropdownMenuTrigger>

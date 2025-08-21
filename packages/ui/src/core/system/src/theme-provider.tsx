@@ -3,7 +3,7 @@ import type { ComponentProps, FC } from "react";
 
 type ThemeProviderProps = ComponentProps<typeof NextThemesProvider>;
 
-export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   return (
     <NextThemesProvider
       attribute="class"
@@ -15,3 +15,5 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     </NextThemesProvider>
   );
 };
+
+export { ThemeProvider, type ThemeProviderProps };

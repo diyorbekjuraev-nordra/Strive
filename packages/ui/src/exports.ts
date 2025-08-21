@@ -44,6 +44,17 @@ export * from "./library/Inline";
 export * from "./library/ViewSettings";
 export * from "./library/Accordion";
 export * from "./library/ActivityLog";
+export * from "./library/CollapseBox";
+export * from "./library/Tile";
+export * from "./library/Editable";
+export * from "./library/Status";
+export * from "./library/AiSlider";
+export * from "./library/SidePanel";
+export * from "./library/BorderBeam";
+export * from "./library/ShineBorder"; 
+export * from "./library/Sorter";
+export * from "./library/EmojiPicker";
+export * from "./library/ThreadOpener";
 
 export * from "./lib/hooks/useColors";
 export * from "./lib/hooks/useIsMobile";
@@ -52,3 +63,5 @@ export * from "./lib/hooks/useFileUpload";
 export * from "./lib/types/colors";
 export * from "./core/system/src";
 export * from "./lib/shared/layer";
+export * from "./lib/providers";
+

@@ -1,8 +1,1 @@
-export {
-  toIterator,
-  mapPropsVariants,
-  mapPropsVariantsWithCommon,
-  isStriveUIEl,
-} from "./utils";
-
-export { ThemeProvider } from "./theme-provider";
+export { ThemeProvider, type ThemeProviderProps } from "./theme-provider";

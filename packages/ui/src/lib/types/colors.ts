@@ -48,6 +48,8 @@ type BORDER_COLOR_VARIANTS =
 
 type STATUS_VARIANTS = "success" | "warning" | "error" | "info";
 
+type LAYER_VARIANTS = 0 | 1 | 2 | 3;
+
 enum BORDER_COLOR_VARIANT_ENUM {
   DEFAULT = "var(--border-00)",
   SUBTLE_00 = "var(--border-subtle-00)",
@@ -118,4 +120,5 @@ export {
   type LINK_COLOR_VARIANTS,
   type ICON_COLOR_VARIANTS,
   type STATUS_VARIANTS,
+  type LAYER_VARIANTS,
 };

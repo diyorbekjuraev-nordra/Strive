@@ -78,7 +78,7 @@ export interface InputProps
   minLength?: number;
 }
 
-function InputBase({
+export function InputBase({
   className,
   size,
   type,

@@ -1,7 +1,6 @@
 {
   "name": "@ebrai/strive",
-  "version": "0.1.68",
-  "private": true,
+  "version": "0.1.78",
   "description": "A modern React component library",
   "keywords": [
     "react"
@@ -20,7 +19,7 @@
   },
   "license": "ISC",
   "author": "ebrai",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/exports.js",
   "module": "dist/exports.mjs",
   "types": "dist/exports.d.ts",
@@ -37,6 +36,7 @@
     "README.md"
   ],
   "scripts": {
+    "dev": "next dev --turbopack",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
@@ -81,6 +81,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "framer-motion": "^12.23.12",
+    "frimousse": "^0.3.0",
     "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "next-themes": "^0.4.6",
@@ -92,7 +93,7 @@
     "react-resizable-panels": "^3.0.4",
     "react-window": "^1.8.11",
     "rimraf": "^6.0.1",
-    "storybook": "^9.1.2",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.12",
     "tsc-alias": "^1.8.16",

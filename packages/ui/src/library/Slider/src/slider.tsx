@@ -34,7 +34,7 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col bg-red-500",
+        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
         className
       )}
       {...props}
@@ -59,8 +59,8 @@ function Slider({
           className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 group"
         >
           <Badge
-            variant="outline"
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 -top-4 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+            variant="secondary"
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 -top-4 opacity-0 group-hover:opacity-100 transition-opacity duration-150 border border-border"
           >
             {_values?.[index]}%
           </Badge>

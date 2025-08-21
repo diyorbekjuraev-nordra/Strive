@@ -6,7 +6,7 @@ import {
   type FileWithPreview,
 } from "@/lib/hooks/useFileUpload";
 import { Alert, AlertDescription, AlertTitle } from "@/library/Alert";
-import { Button } from "@/library/Button";
+import { Button, type ButtonProps } from "@/library/Button";
 import { Camera, Trash, TriangleAlert } from "lucide-react";
 import { Typography } from "@/library/Typography";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,8 @@ interface AvatarUploadProps {
   variant?: "rounded" | "circle";
   title?: string;
   shortDescription?: string;
+  removeButtonProps?: ButtonProps;
+  uploadButtonProps?: ButtonProps;
 }
 
 function AvatarUpload({
@@ -32,6 +34,8 @@ function AvatarUpload({
   variant = "rounded",
   title = "Profile Picture",
   shortDescription = "We only support PNGs, JPEGs and GIFs under",
+  removeButtonProps,
+  uploadButtonProps,
 }: Readonly<AvatarUploadProps>) {
   const [
     { files, isDragging, errors },
@@ -107,7 +111,7 @@ function AvatarUpload({
               <img
                 src={previewUrl}
                 alt="Avatar"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover group-hover:opacity-70 opacity-100 transition-opacity duration-300"
               />
             ) : (
               <AvatarFallback
@@ -121,12 +125,7 @@ function AvatarUpload({
               </AvatarFallback>
             )}
             <div className="absolute inset-0 flex items-center justify-center object-cover group-hover:opacity-100 opacity-0 transition-opacity duration-300">
-              <Camera
-                className="size-6"
-                width={24}
-                height={24}
-                color="#393939"
-              />
+              <Camera className="size-6" width={24} height={24} color="#ccc" />
             </div>
           </div>
         </AvatarBase>
@@ -143,7 +142,12 @@ function AvatarUpload({
             </Typography>
           </div>
           <div className="flex items-center gap-2">
-            <Button size="sm" onClick={openFileDialog} prepend={<Camera />}>
+            <Button
+              size="sm"
+              onClick={openFileDialog}
+              prepend={<Camera />}
+              {...uploadButtonProps}
+            >
               Upload
             </Button>
             {currentFile && (
@@ -153,6 +157,7 @@ function AvatarUpload({
                 className="size-6"
                 hasIconOnly
                 aria-label="Remove avatar"
+                {...removeButtonProps}
               >
                 <Trash className="size-3.5" />
               </Button>

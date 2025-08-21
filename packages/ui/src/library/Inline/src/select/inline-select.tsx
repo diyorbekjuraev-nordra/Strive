@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -11,7 +12,10 @@ import { Search, CircleCheck } from "lucide-react";
 import { Skeleton } from "@/library/Skeleton";
 import { InlineInput } from "@/library/Inline/src/input/inline-input";
 import { cn } from "@/lib/utils";
-import { FixedSizeList as List, ListChildComponentProps } from "react-window";
+import {
+  FixedSizeList as List,
+  type ListChildComponentProps,
+} from "react-window";
 import { useInView } from "react-intersection-observer";
 
 type InlineSelectProps<T> = {
@@ -47,6 +51,8 @@ type InlineSelectProps<T> = {
     popoverContent?: string;
     popoverItem?: string;
   };
+  itemSize?: number;
+  listHeight?: number;
 };
 
 function InlineSelect<T>({
@@ -72,6 +78,8 @@ function InlineSelect<T>({
   footerInputRenderer,
   footerInputProps,
   renderTrigger,
+  itemSize = 33,
+  listHeight = 256,
 }: Readonly<InlineSelectProps<T>>) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -83,7 +91,7 @@ function InlineSelect<T>({
     } else {
       onSelect?.(option);
     }
-  };
+  }; 
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -102,7 +110,7 @@ function InlineSelect<T>({
         onWheel={(e) => e.stopPropagation()}
         className="w-[320px] p-0 rounded-md"
         align="start"
-        style={contentStyle}
+        style={contentStyle} 
       >
         {/* Search Bar */}
         <div className="relative border-b">
@@ -139,9 +147,9 @@ function InlineSelect<T>({
           {/* Virtualized Options */}
           {options.length > 0 && (
             <List
-              height={256}
+              height={listHeight}
               itemCount={options.length}
-              itemSize={26}
+              itemSize={itemSize}
               width={"100%"}
               onItemsRendered={({ visibleStopIndex }) => {
                 if (
