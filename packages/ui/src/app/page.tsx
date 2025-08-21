@@ -20,8 +20,8 @@ const Page = () => {
   return (
     <div className="relative flex h-screen m-4 space-x-4">
       <div className="flex items-center gap-1 w-1/2">
-        <Popover>
-          <PopoverTrigger >
+        <Popover open={isOpen} onOpenChange={setIsOpen}>
+          <PopoverTrigger>
             <Button>Open emoji picker {emoji}</Button>
           </PopoverTrigger>
           <PopoverContent className="w-fit p-0 overflow-hidden" align="start">

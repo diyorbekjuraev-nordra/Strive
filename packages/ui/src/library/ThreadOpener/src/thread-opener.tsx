@@ -12,7 +12,7 @@ const ThreadOpener: React.FC<ThreadOpenerProps> = ({ children, ...props }) => {
       )}
       role="button"
       tabIndex={0}
-      onKeyUp={(e: KeyboardEvent<HTMLDivElement>) => {
+      onKeyUp={(e: any) => {
         if (e.key === "Enter") {
           props?.onClick?.(e);
         }

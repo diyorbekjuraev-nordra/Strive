@@ -1,7 +1,8 @@
 "use client";
 
-import * as PopoverPrimitive from "@radix-ui/react-popover";
+import { Popover as PopoverPrimitive } from "radix-ui";
 import * as React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { LAYER_CLASSNAMES, LAYER_LEVEL } from "@/lib/shared/layer";
 
 import { cn } from "@/lib/utils";
@@ -32,20 +33,46 @@ function PopoverContent({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content> & {
   layer?: LAYER_LEVEL;
+  forceMount?: boolean;
 }) {
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
-        data-slot="popover-content"
+        onInteractOutside={(e: any) => {
+          // allow closing if clicked outside
+          // prevent closing when clicking inside the content
+          if (
+            e.target instanceof HTMLElement &&
+            e.currentTarget?.contains(e.target)
+          ) {
+            e.preventDefault();
+          }
+        }}
+        asChild
+        forceMount
         align={align}
         sideOffset={sideOffset}
-        className={cn(
-          LAYER_CLASSNAMES[layer],
-          "text-popover-foreground CollapsibleContent data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-72 border p-2 shadow-md outline-hidden dark:bg-sidebar rounded-[16px]",
-          className
-        )}
-        {...props}
-      />
+      >
+        <AnimatePresence>
+          {/* @ts-ignore */}
+          {props?.forceMount !== false && (
+            // @ts-ignore
+            <motion.div
+              key="popover-content"
+              initial={{ opacity: 0, scale: 0.95, y: -4 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -4 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              className={cn(
+                LAYER_CLASSNAMES[layer],
+                "will-change-[transform,opacity] text-popover-foreground z-50 w-72 border p-2 shadow-md outline-hidden dark:bg-sidebar rounded-[16px]",
+                className
+              )}
+              {...props}
+            />
+          )}
+        </AnimatePresence>
+      </PopoverPrimitive.Content>
     </PopoverPrimitive.Portal>
   );
 }
@@ -64,12 +91,12 @@ interface TPopoverItem extends React.HTMLAttributes<HTMLDivElement> {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
+
 const PopoverItem = React.memo(
   ({
     className,
     children,
     onClick,
-
     contentEditable = false,
     ...props
   }: TPopoverItem) => {
