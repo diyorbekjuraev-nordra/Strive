@@ -5,4 +5,5 @@ export {
   PopoverAnchor,
   PopoverItem,
   type TPopoverItem,
+  type PopoverContentProps,
 } from "./src/popover";

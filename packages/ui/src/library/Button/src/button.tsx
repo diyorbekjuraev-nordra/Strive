@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
 import { Bell, Loader } from "lucide-react";

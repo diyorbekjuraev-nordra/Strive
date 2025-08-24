@@ -1,6 +1,6 @@
 "use client";
 import { Input } from "@/library/Input";
-import ClickOutside from "@/lib/shared/click-outside";
+import { ClickOutside } from "@/lib/shared/click-outside";
 import { cn } from "@/lib/utils";
 import { ComponentProps, FC, useEffect, useRef, useState } from "react";
 

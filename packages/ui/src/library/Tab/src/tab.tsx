@@ -9,9 +9,10 @@ import { Tabs as TabsPrimitive } from "radix-ui";
 const tabsListVariants = cva("flex items-center shrink-0", {
   variants: {
     variant: {
-      default: "bg-accent p-1",
+      default: "bg-[var(--layer-01)] p-1",
       button: "",
       line: "border-b border-border",
+      icon: "bg-[var(--layer-01)] gap-1",
     },
     shape: {
       default: "",
@@ -19,7 +20,7 @@ const tabsListVariants = cva("flex items-center shrink-0", {
     },
     size: {
       lg: "gap-2.5",
-      md: "gap-2",
+      md: "gap-1",
       sm: "gap-1.5",
       xs: "gap-1",
     },
@@ -55,10 +56,10 @@ const tabsListVariants = cva("flex items-center shrink-0", {
       className: "rounded-md",
     },
 
-    { variant: "line", size: "lg", className: "gap-9" },
-    { variant: "line", size: "md", className: "gap-8" },
-    { variant: "line", size: "sm", className: "gap-4" },
-    { variant: "line", size: "xs", className: "gap-4" },
+    { variant: "line", size: "lg", className: "gap-3" },
+    { variant: "line", size: "md", className: "gap-2" },
+    { variant: "line", size: "sm", className: "gap-1" },
+    { variant: "line", size: "xs", className: "gap-1" },
 
     {
       variant: "default",
@@ -69,6 +70,13 @@ const tabsListVariants = cva("flex items-center shrink-0", {
       variant: "button",
       shape: "pill",
       className: "rounded-full [&_[role=tab]]:rounded-full",
+    },
+
+    // 👇 extra rules for icon variant
+    {
+      variant: "icon",
+      shape: "default",
+      className: "gap-1 [&_[role=tab]]:rounded-md",
     },
   ],
   defaultVariants: {
@@ -87,37 +95,46 @@ const tabsTriggerVariants = cva(
           "text-muted-foreground data-[state=active]:bg-background hover:text-foreground data-[state=active]:text-foreground data-[state=active]:shadow-xs data-[state=active]:shadow-black/5",
         button:
           "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-accent-foreground hover:text-foreground data-[state=active]:bg-accent data-[state=active]:text-foreground",
-        line: "border-b-1 text-muted-foreground border-transparent data-[state=active]:border-[var(--text-primary)] hover:text-[var(--text-primary)] data-[state=active]:text-[var(--text-primary)] data-[state=active]:border-[var(--text-primary)] data-[state=active]:text-[var(--text-primary)]",
+        line: "border-b-1 text-muted-foreground border-transparent data-[state=active]:border-[var(--text-primary)] hover:text-[var(--text-primary)] data-[state=active]:text-[var(--text-primary)]",
+        icon: "p-2 rounded-md hover:bg-[var(--layer-01)] data-[state=active]:bg-[var(--layer-02)] [&_svg]:size-5",
       },
       size: {
         lg: "gap-2.5 [&_svg]:size-5 text-sm",
-        md: "gap-2 [&_svg]:size-4 text-sm",
+        md: "gap-0 [&_svg]:size-4 text-sm",
         sm: "gap-1.5 [&_svg]:size-3.5 text-xs",
         xs: "gap-1 [&_svg]:size-3.5 text-xs",
       },
     },
     compoundVariants: [
-      { variant: "default", size: "lg", className: "py-2.5 px-4 rounded-md" },
+      { variant: "default", size: "lg", className: "py-1 px-4 rounded-md" },
       { variant: "default", size: "md", className: "py-1.5 px-3 rounded-md" },
-      { variant: "default", size: "sm", className: "py-1.5 px-2.5 rounded-sm" },
+      {
+        variant: "default",
+        size: "sm",
+        className: "py-[1.5px] px-2 rounded-sm text-[10px]",
+      },
       {
         variant: "default",
         size: "xs",
         className: "py-[1.8px] px-2 rounded-md text-[10px]",
       },
 
-      { variant: "button", size: "lg", className: "py-3 px-4 rounded-lg" },
+      { variant: "button", size: "lg", className: "py-2.5 px-4 rounded-lg" },
       { variant: "button", size: "md", className: "py-2.5 px-3 rounded-lg" },
-      { variant: "button", size: "sm", className: "py-2 px-2.5 rounded-md" },
+      {
+        variant: "button",
+        size: "sm",
+        className: "py-[5.5px] px-2 rounded-md text-[10px]",
+      },
       {
         variant: "button",
         size: "xs",
         className: "py-[5.5px] px-2 rounded-md text-[10px]",
       },
 
-      { variant: "line", size: "lg", className: "py-3" },
-      { variant: "line", size: "md", className: "py-2.5" },
-      { variant: "line", size: "sm", className: "py-2" },
+      { variant: "line", size: "lg", className: "pb-[10px]"},
+      { variant: "line", size: "md", className: "py-[3.5px] text-[10px]" },
+      { variant: "line", size: "sm", className: "py-[1.8px] text-[10px]" },
       { variant: "line", size: "xs", className: "py-[1.8px] text-[10px]" },
     ],
     defaultVariants: {
@@ -134,6 +151,7 @@ const tabsContentVariants = cva(
     variants: {
       variant: {
         default: "",
+        icon: "mt-1", // 👈 optional tweak for icon tabs
       },
     },
     defaultVariants: {
@@ -144,7 +162,7 @@ const tabsContentVariants = cva(
 
 // Context
 type TabsContextType = {
-  variant?: "default" | "button" | "line";
+  variant?: "default" | "button" | "line" | "icon";
   size?: "lg" | "sm" | "xs" | "md";
 };
 const TabsContext = React.createContext<TabsContextType>({
@@ -200,7 +218,7 @@ function TabsTrigger({
         className={cn(tabsTriggerVariants({ variant, size }), className)}
         {...props}
       >
-        <div className="border border-transparent group-data-[state=active]:border-border group-data-[state=active]:rounded-md flex items-center gap-1 p-1">
+        <div className="border border-transparent group-data-[state=active]:border-border group-data-[state=active]:rounded-md flex items-center gap-1 p-1 hover:border-border hover:rounded-md">
           {props.children}
         </div>
       </TabsPrimitive.Trigger>
@@ -231,4 +249,12 @@ function TabsContent({
   );
 }
 
-export { Tabs, TabsContent, TabsList, TabsTrigger };
+export {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  tabsListVariants,
+  tabsTriggerVariants,
+  tabsContentVariants,
+};

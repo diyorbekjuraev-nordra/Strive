@@ -54,7 +54,22 @@ function Checkbox({
       <CheckboxPrimitive.Indicator
         className={cn("flex items-center justify-center text-current")}
       >
-        <Check className="group-data-[state=indeterminate]:hidden" />
+        <svg
+          width="2"
+          height="2"
+          viewBox="0 0 8 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="group-data-[state=indeterminate]:hidden group-data-[state=checked]:text-white !w-3 !h-3"
+        >
+          <path
+            d="M1.5 4L2.45056 5.36575C2.83958 5.92468 3.66129 5.93978 4.07057 5.39552L7 1.5"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></path>
+        </svg>
         <Minus className="hidden group-data-[state=indeterminate]:block" />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>

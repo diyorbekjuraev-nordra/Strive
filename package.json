@@ -17,7 +17,6 @@
     "clean": "pnpm -r run clean"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.0",
     "typescript": "^5.9.2"
   }
 }

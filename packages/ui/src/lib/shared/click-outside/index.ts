@@ -7,7 +7,11 @@ interface ClickOutsideProps {
   children: any;
 }
 
-const ClickOutside = ({ active = true, onClick, children }: ClickOutsideProps) => {
+const ClickOutside = ({
+  active = true,
+  onClick,
+  children,
+}: ClickOutsideProps) => {
   const innerRef = useRef<HTMLElement | null>(null);
 
   const handleClick = (event: any) => {
@@ -35,4 +39,4 @@ const ClickOutside = ({ active = true, onClick, children }: ClickOutsideProps) =
   return React.cloneElement(children, { ref: innerRef });
 };
 
-export default ClickOutside;
+export { ClickOutside, type ClickOutsideProps };

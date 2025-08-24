@@ -9,7 +9,7 @@ const colors = [
   "#7986CB",
 ];
 
-export const getDeterministicColor = (id: string) => {
+const getDeterministicColor = (id: string) => {
   let hash = 0;
   for (let i = 0; i < id.length; i++) {
     hash = (hash << 5) - hash + id.charCodeAt(i);
@@ -18,20 +18,20 @@ export const getDeterministicColor = (id: string) => {
   return colors[Math.abs(hash) % colors.length];
 };
 
-export const DEFAULT_COLOR_CLASSES = [
-  "bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300",
-  "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300",
-  "bg-lime-100 text-lime-700 dark:bg-lime-500/20 dark:text-lime-300",
-  "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-300",
-  "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400",
-  "bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400",
-  "bg-gray-200 text-gray-700 dark:bg-gray-500/20 dark:text-gray-300",
-  "bg-emerald-100 text-emerald-700 dark:bg-green-500/20 dark:text-green-400",
-  "bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-300",
-  "bg-zinc-100 text-zinc-700 dark:bg-zinc-700 dark:text-white",
+const DEFAULT_COLOR_CLASSES = [
+  "bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300 border-orange-200 dark:border-orange-700",
+  "bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700",
+  "bg-lime-100 text-lime-700 dark:bg-lime-500/20 dark:text-lime-300 border-lime-200 dark:border-lime-700",
+  "bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-300 border-green-200 dark:border-green-700",
+  "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400 border-red-200 dark:border-red-700",
+  "bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 border-blue-200 dark:border-blue-700",
+  "bg-gray-200 text-gray-700 dark:bg-gray-500/20 dark:text-gray-300 border-gray-200 dark:border-gray-700",
+  "bg-emerald-100 text-emerald-700 dark:bg-green-500/20 dark:text-green-400 border-emerald-200 dark:border-emerald-700",
+  "bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-300 border-purple-200 dark:border-purple-700",
+  "bg-zinc-100 text-zinc-700 dark:bg-zinc-700 dark:text-white border-zinc-200 dark:border-zinc-700",
 ];
 
-export function getColorById(id: string, colorClasses = DEFAULT_COLOR_CLASSES) {
+function getColorById(id: string, colorClasses = DEFAULT_COLOR_CLASSES) {
   let hash = 0;
   for (let i = 0; i < id?.length; i++) {
     hash = id?.charCodeAt(i) + ((hash << 5) - hash);
@@ -45,7 +45,7 @@ export function getColorById(id: string, colorClasses = DEFAULT_COLOR_CLASSES) {
  * @param options Optional configuration for the color generation
  * @returns A string in the format 'oklch(L% C H)'
  */
-export function getRandomOklchColor(options?: {
+function getRandomOklchColor(options?: {
   minLightness?: number; // 0-100
   maxLightness?: number; // 0-100
   minChroma?: number; // 0-0.5 (recommended range for sRGB)
@@ -74,7 +74,7 @@ export function getRandomOklchColor(options?: {
  * @param options Optional bounds for OKLCH values
  * @returns A string in the format 'oklch(L% C H)'
  */
-export function getHashedOklchColor(
+function getHashedOklchColor(
   id: string,
   options?: {
     minLightness?: number; // 0–100
@@ -108,3 +108,10 @@ export function getHashedOklchColor(
 
   return `oklch(${L}% ${C.toFixed(3)} ${H})`;
 }
+
+export {
+  getDeterministicColor,
+  getRandomOklchColor,
+  getHashedOklchColor,
+  getColorById,
+};

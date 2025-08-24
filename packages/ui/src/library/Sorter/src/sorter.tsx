@@ -62,11 +62,11 @@ function Sort({
   const getSize = useMemo(() => {
     switch (size) {
       case "sm":
-        return "h-6";
+        return "h-6.5";
       case "md":
-        return "h-7";
-      case "lg":
         return "h-8";
+      case "lg":
+        return "h-10";
       default:
         return "h-7";
     }
@@ -77,7 +77,7 @@ function Sort({
       <DropdownMenu>
         <DropdownMenuTrigger
           className={cn(
-            "w-full h-7 px-2 outline-0 rounded-[10px] border py-2 flex items-center justify-center cursor-pointer data-[state=open]:bg-[var(--background-selected)]",
+            "w-full h-7 px-2 outline-0 rounded-md border py-2 flex items-center justify-center cursor-pointer data-[state=open]:bg-[var(--background-selected)]",
             getSize
           )}
           onClick={(e) => e.stopPropagation()}

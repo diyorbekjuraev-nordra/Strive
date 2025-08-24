@@ -244,6 +244,8 @@ export const useButton = (props: UseButtonProps) => {
       isLoading,
       withBadge,
       hasIconOnly,
+      otherProps,
+      props,
     ]
   );
 
