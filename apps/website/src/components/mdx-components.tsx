@@ -188,7 +188,7 @@ const components = (componentExamples: ComponentExamples | undefined, componentC
     __rawString__?: string;
     __withMeta__?: boolean;
     __src__?: string;
-    __event__?: Event['name'];
+    __event__?: any;
   }) => {
     return (
       <>
@@ -203,7 +203,6 @@ const components = (componentExamples: ComponentExamples | undefined, componentC
           <CopyButton
             value={__rawString__}
             src={__src__}
-            event={__event__}
             className={cn(
               'absolute rounded-md bg-neutral-950 dark:bg-neutral-900 right-4 top-4',
               __withMeta__ && 'top-16',

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Doc } from 'contentlayer/generated';
+import { Doc } from '../../.contentlayer/generated';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { docsConfig } from '@/config/docs';
 import { NavItem, NavItemWithChildren } from '@/config/types';
