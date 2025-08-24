@@ -669,3 +669,16 @@ body {
     box-shadow: 0 0 0 10px var(--pulse-shadow-secondary);
   }
 }
+
+/** Custom Container **/
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1440px) {
+    padding-inline: 2rem;
+    max-width: 1440px;
+  }
+}

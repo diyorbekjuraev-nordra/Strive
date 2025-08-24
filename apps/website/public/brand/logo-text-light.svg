@@ -1,0 +1,31 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Icon -->
+  <g transform="translate(30, 30)">
+    <!-- Outer circle -->
+    <circle cx="70" cy="70" r="60" fill="none" stroke="url(#gradient)" stroke-width="6" opacity="0.3"/>
+    
+    <!-- Arrow/Mountain symbol representing "Strive" -->
+    <path d="M35 85 L70 35 L105 85 L92 85 L70 50 L48 85 Z" fill="url(#gradient)"/>
+    
+    <!-- UI element - small squares representing interface -->
+    <rect x="56" y="95" width="6" height="6" fill="url(#gradient)" opacity="0.7"/>
+    <rect x="66" y="95" width="6" height="6" fill="url(#gradient)" opacity="0.7"/>
+    <rect x="76" y="95" width="6" height="6" fill="url(#gradient)" opacity="0.7"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="180" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" fill="url(#textGradient)">
+    Strive <tspan font-weight="400" fill="#6b7280">UI</tspan>
+  </text>
+</svg>
